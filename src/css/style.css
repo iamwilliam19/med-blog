@@ -212,6 +212,22 @@ footer {
   margin-top: 20px;
   margin-left: 25px;
 }
+.readMore {
+  background-color: #280A66;
+  color: #FFF;
+  width: 70px;
+  padding: 10px 0px 10px 0px;
+  text-align: center;
+  font-size: 0.8rem;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+#ribbon {
+  background-color: #280A66;
+  color: #fff;
+  opacity: 0.7;
+}
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main {
@@ -241,6 +257,9 @@ footer {
     width: 70%;
     float: left;
   }
+  #ribbon {
+    margin-left: 10px;
+  }
 }
 /*:::::::::::: tablet ends ::::::::::::::::*/
 /*:::::::::::::desktop::::::::::::::::::::*/
@@ -264,12 +283,15 @@ footer {
   }
   .blogLeft {
     display: block;
-    width: 19%;
-    margin-right: 1%;
+    width: 20%;
+    margin-right: 5%;
     float: left;
   }
   .blogRight {
-    width: 80%;
+    width: 75%;
     float: left;
+  }
+  #ribbon {
+    margin-left: 10px;
   }
 }

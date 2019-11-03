@@ -38,8 +38,164 @@
         
     </div>
 
+    <!--right blog page -->
 
-    <div class="blogRight">b</div>
+    <div class="blogRight">
+        <div class="ui three doubling stackable  cards">
+            <div class="ui card">
+                <div class="ui image">
+                    <div class="ui ribbon label" id="ribbon">Pharmacology</div>
+                    <img src="images/sample.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="header">
+                        What causes cancer that is unknown to man
+                    </div>
+                    <div class="meta">
+                        By Ikeji Chukwunonso | 04 April 2019
+                    </div>
+
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                    </div>
+
+                </div>
+
+                <a href="#" >
+                    <div class="readMore">Read More</div>
+                </a>
+
+                
+            </div>
+
+            <div class="ui card">
+                <div class="ui image">
+                    <div class="ui ribbon label" id="ribbon">Medical Biochemistry</div>
+                    <img src="images/sample.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="header">
+                        What causes cancer that is unknown to man
+                    </div>
+                    <div class="meta">
+                        By Ikeji Chukwunonso | 04 April 2019
+                    </div>
+
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                    </div>
+
+                </div>
+
+                <a href="#" >
+                    <div class="readMore">Read More</div>
+                </a>
+            </div>
+
+            <div class="ui card">
+                <div class="ui image">
+                    <div class="ui ribbon label" id="ribbon">Anatomy</div>
+                    <img src="images/sample.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="header">
+                        What causes cancer that is unknown to man
+                    </div>
+                    <div class="meta">
+                        By Ikeji Chukwunonso | 04 April 2019
+                    </div>
+
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                    </div>
+
+                </div>
+
+                <a href="#" >
+                    <div class="readMore">Read More</div>
+                </a>
+            </div>
+
+            <div class="ui card">
+                <div class="ui image">
+                    <div class="ui ribbon label" id="ribbon">Physiology</div>
+                    <img src="images/sample.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="header">
+                        What causes cancer that is unknown to man
+                    </div>
+                    <div class="meta">
+                        By Ikeji Chukwunonso | 04 April 2019
+                    </div>
+
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                    </div>
+
+                </div>
+
+                <a href="#" >
+                    <div class="readMore">Read More</div>
+                </a>
+            </div>
+
+            <div class="ui card">
+                <div class="ui image">
+                    <div class="ui ribbon label" id="ribbon">Medical Biochemistry</div>
+                    <img src="images/sample.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="header">
+                        What causes cancer that is unknown to man
+                    </div>
+                    <div class="meta">
+                        By Ikeji Chukwunonso | 04 April 2019
+                    </div>
+
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                    </div>
+
+                </div>
+
+                <a href="#" >
+                    <div class="readMore">Read More</div>
+                </a>
+            </div>
+
+            <div class="ui card">
+                <div class="ui image">
+                    <div class="ui ribbon label" id="ribbon">Anatomy</div>
+                    <img src="images/sample.jpg" />
+                </div>
+
+                <div class="content">
+                    <div class="header">
+                        What causes cancer that is unknown to man
+                    </div>
+                    <div class="meta">
+                        By Ikeji Chukwunonso | 04 April 2019
+                    </div>
+
+                    <div class="description">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                    </div>
+
+                </div>
+
+                <a href="#" >
+                    <div class="readMore">Read More</div>
+                </a>
+            </div>
+
+        </div>
+    </div>
 
     <div style="clear:both"></div>
 </section>
