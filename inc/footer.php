@@ -5,6 +5,10 @@
 
 <script>
 $(document).ready(()=>{
-    $('.ui.accordion').accordion('open');
+    $('.ui.accordion').accordion();
+    $('.menubut').on('click',()=>{
+       $('.ui.sidebar').sidebar('toggle');
+        
+    });
 })
 </script>
