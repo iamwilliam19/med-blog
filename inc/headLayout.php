@@ -2,19 +2,19 @@
 <header>
   <div class="ui padded grid">
     <div class="four wide center aligned computer only column">
-     <a href="blog"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
+     <a href="index"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
     </div>
 
     <div class="four wide center aligned tablet only column">
-    <a href="blog"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
+    <a href="index"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
     </div>
 
     <div class="ten wide left aligned mobile only column">
-    <a href="blog"> <div class="ui large  header " id="logo" >ReachMedica</div></a>
+    <a href="index"> <div class="ui large  header " id="logo" >ReachMedica</div></a>
     </div>
     <div class="seven wide computer only column">
       <nav class="ui right floated secondary  menu">
-        <a class=" active item" href="blog">Blog</a>
+        <a class=" active item" href="index">Blog</a>
         <a class="item" href="aboutus">About us</a>
         <a class="item" href="contactus">Contact us</a>
         <a class="item" href="faq">FAQ</a>
@@ -54,7 +54,7 @@
 <main class="main">
   <div class="ui padded container">
     <aside class="ui sidebar vertical menu">
-      <div class="item" href="blog">Blog</div>
+      <div class="item" href="index">Blog</div>
       <div class="item" href="aboutus">About us</div>
       <div class="item" href="contactus">Contact us</div>
       <div class="item" href="faq">FAQ</div>
