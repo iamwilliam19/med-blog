@@ -29,13 +29,13 @@
       </nav>
     </div>
     <div class="five wide right aligned computer only column">
-      <div class="ui button " id="changeButton" >Login</div>
-      <div class="ui button" id="changeButton">Sign up</div>
+      <a href="login" class="ui button " id="changeButton" >Login</a>
+      <a href="signup" class="ui button" id="changeButton">Sign up</a>
     </div>
 
     <div class="six wide right aligned tablet only column">
-      <div class="ui button " id="changeButton" >Login</div>
-      <div class="ui button" id="changeButton">Sign up</div>
+      <a href="login" class="ui button " id="changeButton" >Login</a>
+      <a href="signup" class="ui button" id="changeButton">Sign up</a>
     </div>
 
     <div class="six wide right aligned mobile only column">
@@ -58,6 +58,6 @@
       <div class="item" href="aboutus">About us</div>
       <div class="item" href="contactus">Contact us</div>
       <div class="item" href="faq">FAQ</div>
-      <div class="item">Login</div>
-      <div class="item">Sign up</div>
+      <a href="login" class="item">Login</a>
+      <a href="signup" class="item">Sign up</a>
     </aside>

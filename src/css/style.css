@@ -232,7 +232,7 @@ footer {
   padding-top: 10px;
 }
 #imageBase {
-  margin-bottom: 20px;
+  margin-brottom: 20px;
 }
 #padIcon {
   margin-left: 10px;
@@ -271,6 +271,54 @@ footer {
   width: 100px;
   height: 100px;
   border-radius: 100px;
+}
+.form {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+.underLine {
+  width: 20%;
+  margin: auto;
+  border: 1px solid #b93434;
+}
+.formAux {
+  text-align: center;
+}
+.formAux span a {
+  color: #280A66;
+  text-decoration: underline;
+}
+.butCont {
+  width: 120px;
+  height: 25px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.butCont button {
+  height: 100%;
+  width: 100%;
+  background-color: #280A66;
+  color: #FFF;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding-top: 3px;
+}
+.formMeta {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -40px;
+}
+.socialBut {
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  margin-top: -15px;
 }
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {

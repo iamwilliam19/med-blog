@@ -8,7 +8,7 @@
 
    <div class="row">
       <div class="sixteen wide column">
-        <img src="images/sample.jpg" class="ui fluid image" />
+        <img src="images/faq.png" class="ui fluid image" />
       </div>
    </div>
 

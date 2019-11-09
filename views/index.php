@@ -44,8 +44,8 @@
         <div class="ui three doubling stackable  cards">
             <div class="ui card">
                 <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Pharmacology</div>
-                    <img src="images/sample.jpg" />
+                 
+                    <img src="images/one.png" />
                 </div>
 
                 <div class="content">
@@ -71,8 +71,8 @@
 
             <div class="ui card">
                 <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Medical Biochemistry</div>
-                    <img src="images/sample.jpg" />
+                   
+                    <img src="images/three.png" />
                 </div>
 
                 <div class="content">
@@ -96,8 +96,8 @@
 
             <div class="ui card">
                 <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Anatomy</div>
-                    <img src="images/sample.jpg" />
+                    
+                    <img src="images/four.png" />
                 </div>
 
                 <div class="content">
@@ -121,8 +121,8 @@
 
             <div class="ui card">
                 <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Physiology</div>
-                    <img src="images/sample.jpg" />
+                   
+                    <img src="images/five.png" />
                 </div>
 
                 <div class="content">
@@ -146,8 +146,8 @@
 
             <div class="ui card">
                 <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Medical Biochemistry</div>
-                    <img src="images/sample.jpg" />
+                   
+                    <img src="images/two.png" />
                 </div>
 
                 <div class="content">
@@ -171,8 +171,8 @@
 
             <div class="ui card">
                 <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Anatomy</div>
-                    <img src="images/sample.jpg" />
+                    
+                    <img src="images/three.png" />
                 </div>
 
                 <div class="content">

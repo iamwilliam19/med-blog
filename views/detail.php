@@ -1,7 +1,7 @@
 <section class="blogBox">
     <div class="blogLeft">
         <div class="blogProImage">
-            <img src="images/sample.jpg" />
+            <img src="images/one.png" />
         </div>
         <div class="proName ">Ikeji Chukwunonso</div>
         <div class="proDescription">

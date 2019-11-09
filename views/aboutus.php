@@ -8,7 +8,7 @@
 
    <div class="row">
       <div class="sixteen wide column">
-        <img src="images/sample.jpg" class="ui fluid image" />
+        <img src="images/clinic.png" class="ui fluid image" />
       </div>
    </div>
 
@@ -48,7 +48,7 @@
                     
                 </p>
                     <br />
-                <img src="images/sample.jpg" class="ui middle aligned huge image" />
+                <img src="images/us.png" class="ui middle aligned huge image" />
             </div>
       </div>
    </div>
