@@ -1,21 +1,67 @@
+<?php 
+
+    if(!isset($_GET['id'])){
+        //load error page
+        header("location: ./page404");
+
+    }else{
+
+    $id = $_GET['id'];
+    require "api/post_api.php";
+    require "api/poster_api.php";
+
+    
+
+    //instantiate class
+    $postHandler = new apiProcessor();
+    $posterHandler = new posterProcessor();
+    $post = $postHandler->detailFetcher($id);
+    $poster = $posterHandler->fetchPoster($post->poster_email);
+   
+    //check if user is online
+    if (isset($_SESSION['email']) && $_SESSION['email'] != "") {
+        $email = $_SESSION['email'];
+         //get my rank and detail
+        $myIdentity = $posterHandler->fetchMe($email);
+        $myRank = $myIdentity->rank;
+        $myId = $myIdentity->id;
+    }else{
+        $email = '';
+        $myRank = '';
+    }
+    
+?>
+
 <section class="blogBox">
     <div class="blogLeft">
         <div class="blogProImage">
-            <img src="images/one.png" />
+            <img src="<?php echo $poster->image  ?>" />
         </div>
-        <div class="proName ">Ikeji Chukwunonso</div>
+        <div class="proName "><?php echo $poster->fname. ' ' . $poster->lname  ?></div>
         <div class="proDescription">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, voluptate nisi! Ab dolorum con
+        <?php echo $poster->bio  ?>
         </div>
+        <?php 
+            //check if I am the poster
+            if($poster->email == $email):
+        ?>
         <div class="proEditLink">
-            <a href="detail">Edit Profile</a>
+            <a href="profile_edit?email=<?php echo $poster->email  ?>">Edit Profile</a>
         </div>
+
+        <?php endif; ?>
         
             <div class="firstBearer">
                 <ul>
-                    
-                    <a href="detail"><li><strong>My Posts</strong></li></a>
-                    <a href="detail"><li><strong>Recent Posts</strong></li></a>
+                <?php 
+                    //check if am logged in and an admin
+                    if($myRank == 'admin'):
+                ?>
+
+                    <a href="index?poster_id=<?php echo $myId ?>"><li><strong>My Posts</strong></li></a>
+
+                <?php endif; ?>
+                    <a href="index"><li><strong>Recent Posts</strong></li></a>
                     <li class="except "><strong>Post Fields</strong><i class="ui dropdown icon pushRight"></i></li>
                     
                 </ul>
@@ -26,19 +72,23 @@
 
             <div class="secondBearer">
                 <ul>
-                   <a href="detail"> <li><strong>All</strong></li></a>
-                   <a href="detail"><li><strong>Anatomy</strong></li></a>
-                   <a href="detail"><li><strong>Pharmacology</strong></li></a>
-                   <a href="detail"><li><strong>Physiology</strong></li></a>
-                   <a href="detail"><li><strong>Medical Biochemistry</strong></li></a>
+                   <a href="index"> <li><strong>All</strong></li></a>
+                   <a href="index?category=anatomy"><li><strong>Anatomy</strong></li></a>
+                   <a href="index?category=pharmacology"><li><strong>Pharmacology</strong></li></a>
+                   <a href="index?category=physiology"><li><strong>Physiology</strong></li></a>
+                   <a href="index?category=mbc"><li><strong>Medical Biochemistry</strong></li></a>
                 </ul>
             </div>
 
             <br />
             <i class="ui like icon"></i> 120 
             <i class=" ui comment icon" id="padIcon"></i> 129
-
+            <?php 
+                //check if am logged in and an admin
+                if($myRank == 'admin'):
+            ?>
             <a href="detail"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <?php endif; ?>
         
     </div>
 
@@ -47,24 +97,18 @@
     <div class="blogRight">
         <div class="ui text container" id="topPad">
         
-            <div class="ui header"> What causes cancer that is unknown to man</div>
-            <div class="customMeta">By Ikeji William | 04 April 2019</div>
-            <div class="customMeta">Post Field: Medical Biochemistry</div>
+            <div class="ui header"> <?php echo $post->title ?></div>
+            <div class="customMeta">By <?php echo $post->poster ?> | <?php echo $post->day .' '. $post->month .' '. $post->year?></div>
+            <div class="customMeta">Post Field: <?php echo $post->category ?></div>
 
-            <div class="ui image" id="imageBase">
+            <div class="ui fluid image" id="imageBase">
                
-                <img src="images/js.jpg" alt="" />
+                <img src="<?php echo $post->image ?>" alt="<?php echo "Image of ".$post->title ?>" />
             </div>
 
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum unde non fugiat corporis cumque, iusto impedit ipsa illo voluptas ratione dicta eaque, quidem praesentium maxime eveniet. Explicabo, quod? Vel, laudantium?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo culpa expedita eligendi eaque cumque ab quidem similique sint! Accusamus autem architecto nam, in veritatis culpa maiores atque doloremque id iste.
-            </p>
-
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum unde non fugiat corporis cumque, iusto impedit ipsa illo voluptas ratione dicta eaque, quidem praesentium maxime eveniet. Explicabo, quod? Vel, laudantium?
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo culpa expedita eligendi eaque cumque ab quidem similique sint! Accusamus autem architecto nam, in veritatis culpa maiores atque doloremque id iste.
-            </p>
+            <?php echo $post->content ?>
+            <br />
+            <br />
             <i class="ui like icon"></i> 120 
             <i class=" ui comment icon" id="padIcon"></i> 129
 
@@ -120,3 +164,7 @@
     <div style="clear:both"></div>
 </section>
 
+<?php 
+
+    }
+?>

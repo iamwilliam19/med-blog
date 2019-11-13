@@ -216,7 +216,7 @@ footer {
   background-color: #280A66;
   color: #FFF;
   width: 70px;
-  padding: 10px 0px 10px 0px;
+  padding: 8px 0px 10px 0px;
   text-align: center;
   font-size: 0.8rem;
   margin: auto;
@@ -232,7 +232,7 @@ footer {
   padding-top: 10px;
 }
 #imageBase {
-  margin-brottom: 20px;
+  margin-bottom: 20px;
 }
 #padIcon {
   margin-left: 10px;
@@ -319,6 +319,9 @@ footer {
   margin: auto;
   text-align: center;
   margin-top: -15px;
+}
+.blogContent {
+  text-align: center;
 }
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {

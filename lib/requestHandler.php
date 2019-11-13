@@ -3,7 +3,7 @@
   //start session
   session_start();
 
-  //$_SESSION['token'] = "";
+  $_SESSION['email'] = "williamikeji@gmail.com";
   if(isset($_SESSION['token'])){
   $token = $_SESSION['token'];
   }else{
