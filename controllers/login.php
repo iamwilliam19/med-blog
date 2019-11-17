@@ -11,5 +11,10 @@ class login extends Controller
     //$this->view->msg = "we have arrived";
     $this->view->render('login');
   }
+
+  public function login_model() {
+    //include login model
+    require "models/login_model.php";
+  }
 }
  ?>

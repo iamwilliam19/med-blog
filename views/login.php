@@ -6,18 +6,19 @@
 
         <div class="underLine"></div>
 
+        <div class="ui hidden error  message" id="errorMessage"></div> 
         <div class="formMeta">
             <strong>Login to view your profile and enjoy thousands of benefits of being a member </strong>
         </div>
-
-        <form class="ui form">
+    
+        <div class="ui form">
             
 
             <div class="field">
                 <label for="email">Email</label>
                 <div class="ui icon input">
                 <i class="ui right floated mail icon"></i>
-                    <input type="email" placeholder="Enter your email" id="fname" />
+                    <input type="email" placeholder="Enter your email" id="email" />
                 </div>
             </div>
 
@@ -25,13 +26,13 @@
                 <label for="pwd1">Password</label>
                 <div class="ui icon input">
                 <i class="ui right floated pencil icon"></i>
-                    <input type="password" placeholder="Enter your password" id="pwd1" />
+                    <input type="password" placeholder="Enter your password" id="pwd" />
                 </div>
             </div>
 
            
             <div class="butCont">
-                <button>LOGIN</button>
+                <button onclick="login()" id="loginBut">LOGIN</button>
             </div>
 
             <div class="formAux">
@@ -42,7 +43,7 @@
                 OR LOGIN WITH
             </div>
             
-        </form>
+        </div>
         <div class="socialBut">
                 <div class="ui buttons">
                     <div class="ui facebook button">

@@ -3,6 +3,7 @@
 </html>
 
 
+
 <script>
 $(document).ready(()=>{
     $('.ui.accordion').accordion();
@@ -12,3 +13,6 @@ $(document).ready(()=>{
     });
 })
 </script>
+
+
+<script src="src/js/custom.js"></script>

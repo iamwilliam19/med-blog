@@ -1,3 +1,8 @@
+<?php
+  
+?>
+
+
 <!--header begins-->
 <header>
   <div class="ui padded grid">
@@ -29,8 +34,17 @@
       </nav>
     </div>
     <div class="five wide right aligned computer only column">
+    <?php
+    
+    if(!isset($_SESSION['email']) ){
+      
+    ?>
       <a href="login" class="ui button " id="changeButton" >Login</a>
       <a href="signup" class="ui button" id="changeButton">Sign up</a>
+    <?php }else if (isset($_SESSION['email'])){
+    ?>
+      <a href="signout" class="ui button" id="changeButton">Sign out</a>
+    <?php } ?>
     </div>
 
     <div class="six wide right aligned tablet only column">

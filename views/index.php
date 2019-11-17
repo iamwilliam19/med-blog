@@ -1,8 +1,6 @@
 <?php
-
     require "api/post_api.php";
     require "api/poster_api.php";
-
     //instantiate class
     $postHandler = new apiProcessor();
     $myHandler = new posterProcessor();
@@ -20,10 +18,10 @@
     
     //check if user is online
     if(isset($_SESSION['email']) && $_SESSION['email'] != ''){
-        $email = $_SESSION['email'];
+        echo $email = $_SESSION['email'];
         //get my rank and detail
         $identity = $myHandler->fetchPoster($email);
-        $rank = $identity->rank;
+        $rank = $identity->poster_rank;
         
         if($rank == 'admin'){
             //get admin details

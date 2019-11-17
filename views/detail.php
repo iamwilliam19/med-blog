@@ -23,7 +23,7 @@
         $email = $_SESSION['email'];
          //get my rank and detail
         $myIdentity = $posterHandler->fetchMe($email);
-        $myRank = $myIdentity->rank;
+        $myRank = $myIdentity->poster_rank;
         $myId = $myIdentity->id;
     }else{
         $email = '';

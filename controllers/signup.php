@@ -11,5 +11,10 @@ class signup extends Controller
     //$this->view->msg = "we have arrived";
     $this->view->render('signup');
   }
+
+  public function signup_model() {
+    //include login model
+    require "models/signup_model.php";
+  }
 }
  ?>
