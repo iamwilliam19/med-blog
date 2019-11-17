@@ -3,16 +3,11 @@
   //start session
   session_start();
 
-  $_SESSION['email'] = "williamikeji@gmail.com";
-  if(isset($_SESSION['token'])){
-  $token = $_SESSION['token'];
-  }else{
-  $token = '';
-  }
 
-  //set token for test purposes
-  $token = 'williamikeji@gmial.com';
+  
+  //unset($_SESSION['email']);
 
+  
  /**
  *Handels all get requests
  */
