@@ -43,7 +43,7 @@
       <a href="signup" class="ui button" id="changeButton">Sign up</a>
     <?php }else if (isset($_SESSION['email'])){
     ?>
-      <a href="signout" class="ui button" id="changeButton">Sign out</a>
+      <div class="ui button" id="changeButton" onclick="logout(event)" >Sign out</div>
     <?php } ?>
     </div>
 

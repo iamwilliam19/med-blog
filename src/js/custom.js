@@ -169,3 +169,47 @@ const login = () => {
     xhttp.send("email="+email.value+"&pwd="+pwd.value);
   }
 }
+
+
+//logout
+const logout = (e) => {
+  let logout = e.target;
+  //add loading icon
+  logout.classList.add('ui');
+  logout.classList.add('loading');
+  logout.classList.add('button');
+
+  
+  
+  //make ajax request
+  let xhttp;
+  if(window.XMLHttpRequest){
+    xhttp = new XMLHttpRequest();
+  }else{
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  xhttp.onreadystatechange = function() {
+    let data;
+    if(this.readyState == 4 && this.status == 200){
+      //continue
+      data = this.responseText;
+      if(data.length != 7){
+        
+         //remove loading icon
+        alert(data.length)
+
+      }else{
+
+         //redirect
+         location.reload();
+      }
+    }else if(this.readyState == 4 && this.status != 200){
+      //reject
+      errorMessage.textContent = "opps an error occured, please check your network connection and try again !!";
+    }
+  };
+  xhttp.open("POST", "models/logout_model.php", true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.send();
+
+}

@@ -18,7 +18,7 @@
     
     //check if user is online
     if(isset($_SESSION['email']) && $_SESSION['email'] != ''){
-        echo $email = $_SESSION['email'];
+        $email = $_SESSION['email'];
         //get my rank and detail
         $identity = $myHandler->fetchPoster($email);
         $rank = $identity->poster_rank;
