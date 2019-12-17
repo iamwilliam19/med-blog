@@ -1,4 +1,7 @@
 <section class="ui relaxed grid " id="toppush">
+
+
+
     <div class="six wide computer only column  leftshade">
         <div class="row">
             <div class="ui card ">
@@ -102,10 +105,12 @@
     </div>
     <div class=" sixteen wide mobile ten wide tablet ten wide computer  column" id="padleft">
         <div class="row">
-            <form>
+            
                 <div class="ui medium header">
                     Get In Touch
                 </div>
+                <div class="ui hidden error  message" id="errorMessage"></div>
+                <div class="ui hidden success  message" id="successMessage"></div>
                 <div class="ui form">
                     <div class="ui field">
                         <label for="name">Name</label>
@@ -128,11 +133,11 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="ui right floated button" id="changeButton">
+                    <button type="submit" class="ui right floated button" id="changeButton" onclick="contactUs(event)">
                         send  
                     </button>
                 </div>
-            </form>
+            
         </div>
     </div>
 

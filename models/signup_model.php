@@ -1,6 +1,6 @@
 <?php
 
-    //require signupapi file
+    //require form api file
     require "../api/form_api.php";
     $form = new formApi();
 

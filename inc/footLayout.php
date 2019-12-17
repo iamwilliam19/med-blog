@@ -29,14 +29,14 @@
               <div class="thirteen wide column">
                 <div class="row">
                   <div class="subinput">
-                    <input type="email" placeholder="Type email" />
+                    <input type="email" placeholder="Type email" id="subEmail" />
                   </div>
                 </div>
               </div>
               <div class="three wide column">
                 <div class="row">
-                  <button  class="subButton">
-                    <i class=" ui grey send icon "></i>
+                  <button  class="subButton" onclick="subscribe()">
+                    <i class=" ui grey send icon " id="subscribe" ></i>
                   </button>
                 </div>
               </div>
@@ -44,7 +44,7 @@
           </div>
         </div>
     </div>
-
+    
     <div class="horizontalDivider"></div>
     <div class="otherFooter">
       <div class="otherFootersub">

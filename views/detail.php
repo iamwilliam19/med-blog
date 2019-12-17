@@ -85,9 +85,9 @@
             <i class=" ui comment icon" id="padIcon"></i> 129
             <?php 
                 //check if am logged in and an admin
-                if($myRank == 'admin'):
+                if($myRank == 'admin' || $myRank == 'director'):
             ?>
-            <a href="detail"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <a href="post"> <div class="ui button" id="newBut"> New Post  </div></a>
             <?php endif; ?>
         
     </div>

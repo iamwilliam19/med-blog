@@ -24,6 +24,12 @@
             }
          }
 
+         public function contactEmpty($name,$email,$message){
+             if($name == '' || $email == '' || $message == ''){
+                 return true;
+             }
+         }
+
          public function notValidEmail($email){
             if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
                 return true;
@@ -70,6 +76,22 @@
              }
          }
 
+         //check if user has subscribed
+         public function subExist($email){
+            $this->stmt = $this->connect()->prepare("SELECT * FROM subscriptions WHERE email = ? ");
+            try{
+                $this->stmt->execute([$email]);
+                $rowCount = $this->stmt->rowCount();
+                if($rowCount > 0){
+                    return true;
+                }else{
+                    return false;
+                }
+             }catch(PDOException $e){
+                 return $e->getMessage();
+             }
+         }
+
          public function createAccount($fname,$lname,$email,$pwd1){
              //encrypt password
              $pwd = md5($pwd1);
@@ -86,5 +108,33 @@
                  return $e->getMessage();
              }
          }
+
+         //create subscription
+         public function createSubscription($email){
+              $this->stmt = $this->connect()->prepare("INSERT INTO subscriptions 
+              (email) 
+              VALUES 
+              ('$email')");
+              try{
+                 $this->stmt->execute();
+                 return "proceed";
+              }catch(PDOException $e){
+                  return $e->getMessage();
+              }
+         }
+
+         //send message
+         public function sendMessage($name,$email,$message){
+            $this->stmt = $this->connect()->prepare("INSERT INTO messages 
+            (name,email,message) 
+            VALUES 
+            ('$name','$email','$message')");
+            try{
+               $this->stmt->execute();
+               return "proceed";
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+       }
     }
 ?>

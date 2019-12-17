@@ -15,7 +15,7 @@
         public function __construct()
         {
                 //echo "processor on";
-            if (isset($_SESSION['token'])) {
+           /* if (isset($_SESSION['token'])) {
                 $this->token = $_SESSION['token'];
                 $this->stmt = $this->connect()->prepare("SELECT * FROM users WHERE uname = ?  ");
                 $this->stmt->execute([$this->token]);
@@ -23,7 +23,7 @@
                 $this->name = $detail->fname.' '. $detail->lname;
             } else {
                 $this->token = '';
-                }
+                }*/
         }
 
         public function fetchPoster($email){
@@ -33,12 +33,12 @@
                 $this->stmt->execute([$email]);
                 return $this->stmt->fetchObject();
             }catch(PDOException $e){
-                return $e->getMEssage();
+                return $e->getMessage();
             }
         }
 
         public function fetchDirector(){
-            $this->stmt = $this->connect()->prepare("SELECT * FROM users WHERE position = 'director' ");
+            $this->stmt = $this->connect()->prepare("SELECT * FROM users WHERE poster_rank = 'director' ");
 
             try{
                 $this->stmt->execute();

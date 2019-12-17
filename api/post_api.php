@@ -13,7 +13,7 @@
         //declare constructor
         public function __construct(){
            //echo "processor on";
-           if(isset($_SESSION['token'])){
+         /*  if(isset($_SESSION['token'])){
                 $this->token = $_SESSION['token'];
                 $this->stmt = $this->connect()->prepare("SELECT * FROM users WHERE uname = ?  ");
                 $this->stmt->execute([$this->token]);
@@ -21,7 +21,7 @@
                 $this->name = $detail->fname.' '. $detail->lname;
             }else{
                 $this->token = '';
-            }
+            }*/
         }
 
         //declare post fetcher

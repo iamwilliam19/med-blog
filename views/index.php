@@ -23,7 +23,7 @@
         $identity = $myHandler->fetchPoster($email);
         $rank = $identity->poster_rank;
         
-        if($rank == 'admin'){
+        if($rank == 'admin' || $rank == 'director'){
             //get admin details
             $proImage = $identity->image;
             $proName = $identity->fname . ' ' .$identity->lname;
@@ -83,8 +83,9 @@
             <div class="firstBearer">
                 <ul>
                 <?php 
+                
                     //check if am logged in and an admin
-                    if($rank == 'admin' && $email == $proEmail):
+                    if(($rank == 'admin' || $rank == 'director') && $email == $proEmail):
                 ?>
                     <a href="index?poster_id=<?php echo $proId ?>"><li><strong>My Posts</strong></li></a>
                     <?php 
@@ -111,10 +112,10 @@
 
             <?php 
                 //check if am logged in and an admin
-                if($rank == 'admin' && $email == $proEmail):
+                if(($rank == 'admin' || $rank == 'director') && $email == $proEmail):
             ?>
 
-            <a href="detail"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <a href="post"> <div class="ui button" id="newBut"> New Post  </div></a>
             <?php
                 endif;
             ?>
@@ -124,7 +125,6 @@
 
     <div class="blogRight">
         <div class="ui three doubling stackable  cards">
-
         <?php 
             foreach ($posts as $post):
         ?>
@@ -133,10 +133,10 @@
                     <img src="<?php echo $post['image'] ?>" />
                 </div>
                 <div class="content">
-                    <div class="header">
+                    <div class="header" id="boxtitle">
                        <?php echo $post['title'] ?>
                     </div>
-                    <div class="meta">
+                    <div class="meta" id="boxmeta">
                         By <?php echo $post['poster'] ?> | <?php echo $post['day'] .' '. $post['month'] .' '. $post['year']?>
                     </div>
                     <div class="description">

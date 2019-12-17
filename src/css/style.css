@@ -324,6 +324,10 @@ footer {
 .blogContent {
   text-align: center;
 }
+#boxtitle,
+#boxmeta {
+  text-align: center;
+}
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main {
