@@ -47,6 +47,7 @@ label {
   min-height: 400px;
   margin-bottom: 50px;
 }
+
 footer {
   width: 100%;
   height: auto;
@@ -327,6 +328,11 @@ footer {
 #boxtitle,
 #boxmeta {
   text-align: center;
+}
+
+.adminMain{
+  min-height: 650px;
+  padding: 20px 10px 0px 10px;
 }
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
