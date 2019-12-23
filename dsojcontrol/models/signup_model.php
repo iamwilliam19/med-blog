@@ -1,7 +1,7 @@
 <?php
 
     //require form api file
-    require "../api/form_api.php";
+    require "../api/formApi.php";
     $form = new formApi();
 
     //get all form variables
@@ -12,7 +12,7 @@
     $pwd2 = $_POST['pwd2'];
     
     //setup account
-    if($form->checkEmpty($fname,$lname,$email,$pwd1,$pwd2)){
+   if($form->checkEmpty($fname,$lname,$email,$pwd1,$pwd2)){
         echo " Please fill all fields ";
     }else if($form->notValidEmail($email)){
         echo " Please add a valid email ";
