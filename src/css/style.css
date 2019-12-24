@@ -47,7 +47,6 @@ label {
   min-height: 400px;
   margin-bottom: 50px;
 }
-
 footer {
   width: 100%;
   height: auto;
@@ -329,11 +328,68 @@ footer {
 #boxmeta {
   text-align: center;
 }
-
-.adminMain{
-  min-height: 650px;
-  padding: 20px 10px 0px 10px;
+/*==================Admin design start =======*/
+.adminMain {
+  padding-top: 40px ;
 }
+.adminRegBox {
+  width: 100%;
+  max-width: 600px;
+  background-color: #FFFFFF;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px 20px 0px 20px;
+  margin-bottom: 100px;
+}
+.formError {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: red;
+  background-color: pink;
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+.adminSub {
+  cursor: pointer;
+}
+.loadSign {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: green;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+.adminRegistered {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: green;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+.messageBody {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+/*==================Admin design end =======*/
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .main {

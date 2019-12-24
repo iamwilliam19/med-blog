@@ -41,6 +41,38 @@
                 return $e->getMessage();
             }
          }
+
+         public function getMessages(){
+            $this->stmt = $this->connect()->prepare(" SELECT * FROM messages order by id DESC ");
+            try{
+                $this->stmt->execute();
+                return $this->stmt->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
+
+
+
+         public function fetchMessage($id){
+            $this->stmt = $this->connect()->prepare(" SELECT * FROM messages WHERE id = ? ");
+            try{
+                $this->stmt->execute([$id]);
+                return $this->stmt->fetchObject();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
+
+         public function updateStatus($id){
+            $this->stmt = $this->connect()->prepare(" UPDATE messages SET status = '1' WHERE id = '$id' " );
+            try{
+                $this->stmt->execute();
+                
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
         
     }
     
