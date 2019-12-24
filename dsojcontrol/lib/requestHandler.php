@@ -4,7 +4,7 @@
   session_start();
 
 
-  
+  $_SESSION['email'] = "williamikeji@gmail.com";
   //unset($_SESSION['email']);
 
   

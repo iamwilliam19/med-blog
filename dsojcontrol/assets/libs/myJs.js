@@ -87,4 +87,50 @@ const regStaff = (e) => {
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         xhttp.send("fname="+fname.value+"&lname="+lname.value+"&email="+email.value+"&pwd1="+pwd.value+"&pwd2="+pwd2.value);
     }
+
+
+}
+
+const changeActivity = (e) => {
+    let target = e.target;
+    let email = target.dataset.email;
+    let activity = target.dataset.activity;
+    let content = target.textContent;
+    target.textContent = "Please wait..";
+       //make an ajax request
+        let xhttp;
+        if(window.XMLHttpRequest){
+        xhttp = new XMLHttpRequest();
+        }else{
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function() {
+        let data;
+        if(this.readyState == 4 && this.status == 200){
+            //continue
+            data = this.responseText;
+           if(data.length != 6 && data.length != 8){
+           
+                showError("oop an error occured, try again later");
+                target.textContent = content;
+
+            }else{
+              target.textContent = data;
+              //change data set
+              if(activity == 1){
+                target.dataset.activity = 0;
+              }else{
+                target.dataset.activity = 1;
+              }
+            }
+            
+        }else if(this.readyState == 4 && this.status != 200){
+            //reject
+            showError("opps an error occured, please check your network connection and try again !!");
+        }
+        };
+        xhttp.open("POST", "models/administrators.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("email="+email+"&activity="+activity);
+
 }
