@@ -73,6 +73,27 @@
                 return $e->getMessage();
             }
          }
+
+         public function getAllPosts(){
+            $this->stmt = $this->connect()->prepare(" SELECT * FROM posts order by id DESC");
+            try{
+                $this->stmt->execute();
+                return $this->stmt->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
+
+         public function deletePost($id){
+            $this->stmt = $this->connect()->prepare(" DELETE FROM posts WHERE id = ? " );
+            try{
+                $this->stmt->execute([$id]);
+                return "Proceed";
+                
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
         
     }
     

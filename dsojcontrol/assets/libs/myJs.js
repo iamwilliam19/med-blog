@@ -29,6 +29,45 @@
     }
 /*****functions ends */
 
+const deletePost = (e) => {
+    let target = e.target;
+    let id = target.dataset.id;
+    let confirmation = confirm("Click OK to delete Post");
+    if (confirmation){
+        target.textContent="Please wait...";
+
+        //make an ajax request
+        let xhttp;
+        if(window.XMLHttpRequest){
+        xhttp = new XMLHttpRequest();
+        }else{
+        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhttp.onreadystatechange = function() {
+        let data;
+        if(this.readyState == 4 && this.status == 200){
+            //continue
+            data = this.responseText;
+           if(data.length != 8){
+           
+             showError(data);
+             target.textContent = "Delete";
+
+            }else{
+                location.reload();
+            }
+            
+        }else if(this.readyState == 4 && this.status != 200){
+            //reject
+            showError("opps an error occured, please check your network connection and try again !!");
+            target.textContent = "Delete";
+        }
+        };
+        xhttp.open("POST", "models/postDelete_model.php", true);
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("id="+id);
+    }
+}
 
 
 const regStaff = (e) => {
