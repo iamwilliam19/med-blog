@@ -46,50 +46,190 @@
 
     <div class="blogRight">
         <div class="ui medium header">Write a post</div>
+        <div class="ui hidden error  message" id="errorMessage"></div> 
         <form class="ui form">
-           ` <div class="field">
+
+        
+            <div class="field">
                 <label for ="title" ><h3>Title</h3></label>
                 <div class="input">
                     <input type="text" placeholder=" write a title" id="title"/>
                 </div>
             </div>
-            
+
             <div class="field">
-                <label for ="text" ><h3>Text</h3></label>
-                <div id="myEditor"></div>
+                <label for ="category" ><h3>Category</h3></label>
+                <select class="ui dropdown" id="category">
+                    <option value="select">Select</option>
+                    <option value="anatomy">Anatomy</option>
+                    <option value="pharmacology">Pharmcology</option>
+                    <option value="physiology">Physiology</option>
+                    <option value="mbc">Medical Biochemistry</option>
+                </select>
             </div>
 
+            <input type="hidden" id="hiddenInput" />
+            <div class="field">
+                <label for ="text" ><h3>Text</h3> </label>
+                <textarea id="summernote"></textarea>
+            </div>
+
+            <button type="submit" class="ui right floated button" id="changeButton" onclick="savePost(event)">
+                Post 
+            </button>
+
             <script>
-                var toolBaroptions = [
-                    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-                    ['blockquote', 'code-block', 'image'],
+$('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
+        placeholder: 'Write Your Post',
+        tabsize: 2,
+        height: 300,
+        callbacks: {
+        onImageUpload : function(files, editor, welEditable) {
+ 
+             for(var i = files.length - 1; i >= 0; i--) {
+                    sendFile(files[i], this)
+            }
+        }
+        },
 
-                    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-                    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-                    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-                    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-                    [{ 'direction': 'rtl' }],                         // text direction
+        toolbar: [
+          ['style', ['style']],
+          ['font', ['bold', 'underline', 'forecolor','backcolor','italic','superscript','subscript','clear']],
+          
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['table', ['table']],
+          ['insert', ['link', 'picture', 'video','hr']],
+          ['misc', [ 'fullscreen','undo', 'redo','help']],
+          
+        ],
+        
+        popover: {
+            image: [
+            ['image', ['resizeFull', 'resizeHalf', 'resizeQuarter', 'resizeNone']],
+            ['float', ['floatLeft', 'floatRight', 'floatNone']],
+            ['remove', ['removeMedia']]
+            ],
+            link: [
+                ['link', ['linkDialogShow', 'unlink']]
+            ],
+           
+        }
+      });       
 
-                    [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-                    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+           
 
-                    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-                    [{ 'font': [] }],
-                    [{ 'align': [] }],
+      //upload image
+            const sendFile = (file, el)=> {
+        var form_data = new FormData();
+        form_data.append('file', file);
+        $.ajax({
+            data: form_data,
+            type: "POST",
+            url: 'models/editor-upload.php',
+            cache: false,
+            contentType: false,
+            processData: false,
+            success: function(url) {
+                console.log(url)
+                let myUrl = url.substr(1);
+                $(el).summernote('editor.insertImage', myUrl);
+                
+            }
+        });
+        }
 
-                    ['clean']                                         // remove formatting button
+                
+                const savePost = (e) =>{
+                    e.preventDefault();
+                    let btn = e.target;
+                    let error = document.getElementById('errorMessage');
+                    let title = document.getElementById('title');
+                    let cat = document.getElementById('category');
+                    let content = document.getElementById('summernote');
+                    
+                    
+                   
+                    
+                   //add hidden to error box
+                   if(!error.classList.contains("ui")){
+                        error.classList.add('ui');
+                    }else if(!error.classList.contains("hidden")){
+                        error.classList.add('hidden');
+                    }else if(!error.classList.contains("error")){
+                        error.classList.add('error');
+                    }else if(!error.classList.contains("message")){
+                        error.classList.add('message');
+                    }
+                    
+                    
+                    //validate title
+                   if(title.value.length == 0){
+                        error.classList.remove('hidden');
+                        error.textContent = "Please enter a title";
+                   }else if(cat.value == "select"){
+                        error.classList.remove('hidden');
+                        error.textContent = "Please select a category";
+                   }else if(content.value.length  < 1){
+                        error.classList.remove('hidden');
+                        error.textContent = "Please write a post";
+                   }else {
+                       //add sending
+                        
+                        btn.classList.remove('button');
+                        btn.classList.add('loading');
+                        btn.classList.add('button');
+                       //submit post
+                       let xhttp;
+                        if(window.XMLHttpRequest){
+                        xhttp = new XMLHttpRequest();
+                        }else{
+                        xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+                        }
+                        xhttp.onreadystatechange = function() {
+                        let data;
+                        if(this.readyState == 4 && this.status == 200){
+                            //continue
+                            data = this.responseText;
+                            if(data.length != 8){
+                            error.classList.remove('hidden');
+                            error.textContent = data;
+                            //remove loading icon
+                            btn.classList.remove('loading');
 
+                            }else{
+                            //ensure error message box is hidden
+                            if(!error.classList.contains("ui")){
+                                error.classList.add('ui');
+                            }else if(!error.classList.contains("hidden")){
+                                error.classList.add('hidden');
+                            }else if(!error.classList.contains("error")){
+                                error.classList.add('error');
+                            }else if(!error.classList.contains("message")){
+                                error.classList.add('message');
+                            }
 
-                ];
+                            //remove loading icon
+                           
+                            btn.classList.remove('loading');
+                           
 
-                var quill = new Quill('#myEditor',{
-                    modules:{
-                        toolbar: toolBaroptions
-                    },
-
-                    theme: 'snow'
-                });
+                            //redirect
+                            location.replace('index');
+                            }
+                        }else if(this.readyState == 4 && this.status != 200){
+                            //reject
+                            error.classList.remove('hidden');
+                            error.textContent = "opps an error occured, please check your network connection and try again !!";
+                        }
+                        };
+                        xhttp.open("POST", "models/post_model.php", true);
+                        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                        xhttp.send("title="+title.value.trim()+"&category="+cat.value+"&post="+content.value);
+                   }
+                }
             </script>
+
+           
         </form>
     </div>
     </div>

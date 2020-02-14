@@ -84,12 +84,43 @@
             }
          }
 
+         public function getMyPosts($email){
+            $this->stmt = $this->connect()->prepare(" SELECT * FROM posts WHERE poster_email = ? order by id DESC");
+            try{
+                $this->stmt->execute([$email]);
+                return $this->stmt->fetchAll();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
+
+
          public function deletePost($id){
             $this->stmt = $this->connect()->prepare(" DELETE FROM posts WHERE id = ? " );
             try{
                 $this->stmt->execute([$id]);
                 return "Proceed";
                 
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
+
+         public function getEditPost($id){
+            $this->stmt = $this->connect()->prepare(" SELECT * FROM posts WHERE id = ? ");
+            try{
+                $this->stmt->execute([$id]);
+                return $this->stmt->fetchObject();
+            }catch(PDOException $e){
+                return $e->getMessage();
+            }
+         }
+
+         public function getAdminDetails($email){
+            $this->stmt = $this->connect()->prepare(" SELECT * FROM users WHERE email = ? ");
+            try{
+                $this->stmt->execute([$email]);
+                return $this->stmt->fetchObject();
             }catch(PDOException $e){
                 return $e->getMessage();
             }

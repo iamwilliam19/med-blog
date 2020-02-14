@@ -50,7 +50,7 @@
                             <div class="formError"></div>
                             <div class=" col-12">
                                 <div class="card">
-                                    <h5 class="card-header">Recent Orders</h5>
+                                    <h5 class="card-header">Posts</h5>
                                     <div class="card-body p-0">
                                         <div class="table-responsive">
                                             <table class="table">
@@ -94,6 +94,7 @@
                                                         <td><?php echo $post['category'] ?></td>
                                                         <td><?php echo $post['views'] ?></td>
                                                         <td><div class=" btn  btn-outline-light" data-id = '<?php echo $post['id'] ?>' onclick="deletePost(event)" >Delete</div> </td>
+                                                        <td><a href="editPost?id=<?php echo $post['id']  ?>" class=" btn  btn-outline-light"> Edit</a> </td>
                                                     </tr>
                                                     <?php 
                                                         endforeach;

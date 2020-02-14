@@ -22,9 +22,14 @@ class View
     require "inc/footer.php";
     */
     require "inc/header.php";
-    require "inc/headLayout.php";
+    if($name != 'login' && $name != 'signup'){
+      require "inc/headLayout.php";
+    }
+    
     require "views/".$name.".php";
-    require "inc/footLayout.php";
+    if($name != 'login' && $name != 'signup'){
+      require "inc/footLayout.php";
+    }
     require "inc/footer.php";
   }
 

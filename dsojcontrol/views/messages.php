@@ -68,7 +68,7 @@
                                                 <?php 
                                                     foreach($adminList as $admin):
                                                         if($admin['status'] == 0){
-                                                            $statusStyle = "<span class='badge-dot badge-brand mr-1'></span>";
+                                                            $statusStyle = "<span class='badge-dot badge-success mr-1'></span>";
                                                            
                                                         }else{
                                                            

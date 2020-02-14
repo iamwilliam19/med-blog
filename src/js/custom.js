@@ -40,7 +40,7 @@ const register = (e) => {
   if(fname.value.trim().length == 0 || lname.value.trim().length == 0 || email.value.trim().length == 0 || pwd1.value.trim().length == 0 || pwd2.value.trim().length == 0 ){
     errorMessage.classList.remove('hidden');
     errorMessage.textContent = "Please fill all fields !!";
-  }else if(!validateName(fname)){
+  }/*else if(!validateName(fname)){
     errorMessage.classList.remove('hidden');
     errorMessage.textContent = "Please enter a valid first name eg. smith !!";
   }else if(!validateName(lname)){
@@ -49,7 +49,7 @@ const register = (e) => {
   }else if(!validateEmail(email)){
     errorMessage.classList.remove('hidden');
     errorMessage.textContent = "Please enter a valid email address !!";
-  }else if(pwd1.value.length < 6){
+  }*/else if(pwd1.value.length < 6){
     errorMessage.classList.remove('hidden');
     errorMessage.textContent = "Password too short !!";
   }else if(pwd1.value != pwd2.value){
@@ -134,10 +134,10 @@ const login = () => {
   if(email.value.trim().length == 0 || pwd.value.trim().length == 0){
     errorMessage.classList.remove('hidden');
     errorMessage.textContent = "Please fill all fields !!";
-  }else if(!validateEmail(email)){
+  }/**else if(!validateEmail(email)){
     errorMessage.classList.remove('hidden');
     errorMessage.textContent = "Please enter a valid email address !!";
-  }else{
+  }*/else{
     //add loading icon
     loginBut.classList.add('ui');
     loginBut.classList.add('loading');

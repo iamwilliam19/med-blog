@@ -63,7 +63,9 @@
 <section class="blogBox">
     <div class="blogLeft">
         <div class="blogProImage">
-            <img src="<?php echo $proImage ?>" alt="image of <?php echo $proName ?>" />
+            <img src="<?php if($proImage != ''){ echo $proImage;}else{
+                echo "images/profile/avartar.jpg";
+            } ?>" alt="image of <?php echo $proName ?>" />
         </div>
         <div class="proName "><?php echo $proName ?></div>
         <div class="proDescription">

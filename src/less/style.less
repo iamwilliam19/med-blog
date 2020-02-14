@@ -404,6 +404,169 @@ footer{
     text-align: center;
 }
 
+/*==================Admin design start =======*/
+.adminMain{
+    padding-top: 40px ;
+    
+  }
+
+  .adminRegBox{
+      width: 100%;
+      max-width:600px;
+      background-color: #FFFFFF;
+      margin: auto;
+      margin-top: 20px;
+      padding: 20px 20px 0px 20px;
+      margin-bottom: 100px;
+  }
+
+  .adminPostBox{
+    width: 95%;
+    
+    background-color: #FFFFFF;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 100px;
+}
+
+  .formError{
+      width:80%;
+      height:auto;
+      text-align: center;
+      color: red;
+      background-color:pink;
+      font-size: 0.8rem;
+      margin:auto;
+      padding: 20px;
+      margin-bottom: 20px;
+      display: none;
+  }
+
+  .adminSub{
+      cursor:pointer;
+  }
+
+  .loadSign{
+    width:80%;
+    height:auto;
+    text-align: center;
+    color: green;
+    background-color:greenyellow; 
+    font-size: 0.8rem;
+    margin:auto;
+    padding: 10px;
+    margin-top: 20px;
+    display:none;
+  }
+
+  
+  .adminRegistered{
+    width:80%;
+    height:auto;
+    text-align: center;
+    color: green;
+    background-color:greenyellow; 
+    font-size: 0.8rem;
+    margin:auto;
+    padding: 10px;
+    margin-top: 20px;
+    display:none;
+  }
+
+  .messageBody{
+    width: 90%;
+    max-width: 600px;
+    margin:auto;
+    margin-top:20px;
+    padding :20px;
+    background-color:#fff;
+    margin-bottom: 50px;
+  }
+
+  .adminProfileBox{
+      background-color:#fff;
+      width: 95%;
+      max-width: 500px;
+      padding: 40px 10px 20px 10px;
+      margin:auto;
+      margin-bottom: 20px;
+
+      ul{
+        padding: 0px;
+        margin: none;
+        list-style-type:none;
+
+            li{
+                padding: 5px 10px 0px 10px;
+                
+                span{
+                    font-weight: 600;
+                    color:black;
+                    float:left;
+                    min-width: 100px;
+                   
+                }
+
+                span:nth-child(even){
+                    padding-left:10px;
+                }
+            }
+
+        
+        }
+
+        .adminProEdit{
+            margin:auto;
+            width:80px;
+            height:auto;
+            color: #000000;
+            background-color: #ccc;
+            cursor:pointer;
+            padding:5px 5px 5px 5px;
+            text-align:center;
+
+            &:hover{
+                background-color:#eee;
+                color:#000;
+            }
+        }
+  }
+
+  .adminBio{
+      height: 200px;
+      width:300px;
+      border:1px solid #bbb;
+      border-radius:10px;
+      padding:10px;
+      line-height: 20px;
+      margin-left:-10px;
+      word-break: none;
+      text-align:left;
+  }
+
+  .adminProImage{
+      width: 150px;
+      height: 150px;
+      border-radius: 150px;
+      margin: auto;
+      margin-bottom: 20px;
+
+        img{
+            height:100%;
+            width:100%;
+            border-radius: 150px;
+        }
+
+        
+  }
+
+  .adminFormLogo{
+      font-size:2rem;
+  }
+
+/*==================Admin design end =======*/
+
   /*:::::::::::::tablet::::::::::::::::::::*/
   @media only screen and (min-width : 768px) and (max-width : 1024px) {
     .main{
@@ -491,6 +654,9 @@ footer{
         margin-left: 10px;
     }
 
+    .adminProfileBox{
+        margin-bottom: 300px;
+    }
     
 
 .proImageBox{
@@ -503,6 +669,8 @@ footer{
             border-radius: 120px; 
         }
 }
+
+
 
     
   }

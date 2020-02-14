@@ -20,14 +20,9 @@
     <link  rel="stylesheet" href="./src/css/normalize.css" />
     <link  rel="stylesheet" href="./src/css/style.css" />
     <script src="src/js/modernizr.min.js" type="text/javascript"></script>
-   <!-- Main Quill library -->
-    <script src="//cdn.quilljs.com/1.3.6/quill.js"></script>
-    <script src="//cdn.quilljs.com/1.3.6/quill.min.js"></script>
-
-    <!-- Theme included stylesheets -->
-    <link href="//cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-    <link href="//cdn.quilljs.com/1.3.6/quill.bubble.css" rel="stylesheet">
-    
+   
+    <link href="summernote-master/dist/summernote-lite.min.css" rel="stylesheet">
+    <script src="summernote-master/dist/summernote-lite.min.js"></script>
    
 
 
