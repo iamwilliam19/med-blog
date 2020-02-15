@@ -129,6 +129,11 @@
         <div class="ui three doubling stackable  cards">
         <?php 
             foreach ($posts as $post):
+                //Create a new DOMDocument object.
+                
+                $mainPost = preg_replace("/<img[^>]+>/", "", $post['content']);
+            
+    
         ?>
             <a href="detail?id=<?php echo $post['id'] ?>"  class="ui card">
                 <div class="ui image">
@@ -143,7 +148,7 @@
                     </div>
                     <div class="description">
                         <div class="blogContent">
-                            <?php echo substr($post['content'], 0, 100) ?>
+                            <?php echo substr($mainPost, 0, 100) ?>
                         </div>
                     </div>
                 </div>
