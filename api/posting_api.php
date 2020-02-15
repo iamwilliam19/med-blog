@@ -40,11 +40,11 @@
             }
         }
 
-        public function uploadPost($title,$cat,$post){
+        public function uploadPost($title,$cat,$post,$image){
             $this->stmt = $this->connect()->prepare("INSERT INTO posts 
-            (title, content, category, poster,poster_email,poster_rank,poster_id,day,month,year)
+            (title,image, content, category, poster,poster_email,poster_rank,poster_id,day,month,year)
             VALUES
-            ('$title', '$post', '$cat', '$this->name','$this->email','$this->rank','$this->poster_id','$this->day','$this->month','$this->year')
+            ('$title','$image', '$post', '$cat', '$this->name','$this->email','$this->rank','$this->poster_id','$this->day','$this->month','$this->year')
             ");
             try{
                 $this->stmt->execute();

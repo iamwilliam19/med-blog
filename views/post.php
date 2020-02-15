@@ -47,7 +47,8 @@
     <div class="blogRight">
         <div class="ui medium header">Write a post</div>
         <div class="ui hidden error  message" id="errorMessage"></div> 
-        <form class="ui form">
+        <div class="ui hidden success  message" id="successMessage"></div> 
+        <form class="ui form" id="myForm">
 
         
             <div class="field">
@@ -130,7 +131,7 @@ $('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
             contentType: false,
             processData: false,
             success: function(url) {
-                console.log(url)
+                
                 let myUrl = url.substr(1);
                 $(el).summernote('editor.insertImage', myUrl);
                 
@@ -143,6 +144,7 @@ $('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
                     e.preventDefault();
                     let btn = e.target;
                     let error = document.getElementById('errorMessage');
+                    let successNote = document.getElementById('successMessage');
                     let title = document.getElementById('title');
                     let cat = document.getElementById('category');
                     let content = document.getElementById('summernote');
@@ -159,6 +161,17 @@ $('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
                         error.classList.add('error');
                     }else if(!error.classList.contains("message")){
                         error.classList.add('message');
+                    }
+
+                    //add hidden to error box
+                   if(!successNote.classList.contains("ui")){
+                        successNote.classList.add('ui');
+                    }else if(!successNote.classList.contains("hidden")){
+                        successNote.classList.add('hidden');
+                    }else if(!successNote.classList.contains("success")){
+                        successNote.successNote.add('success');
+                    }else if(!successNote.classList.contains("message")){
+                        successNote.classList.add('message');
                     }
                     
                     
@@ -190,7 +203,7 @@ $('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
                         if(this.readyState == 4 && this.status == 200){
                             //continue
                             data = this.responseText;
-                            if(data.length != 8){
+                            if(data.length > 1){
                             error.classList.remove('hidden');
                             error.textContent = data;
                             //remove loading icon
@@ -211,10 +224,15 @@ $('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
                             //remove loading icon
                            
                             btn.classList.remove('loading');
-                           
 
-                            //redirect
-                            location.replace('index');
+                            //show loading success
+                            successNote.classList.remove('hidden');
+                            successNote.textContent = "Post uploaded successfully";
+                           
+                            //reset form 
+                            document.getElementById('myForm').reset();
+                            $('#summernote').summernote('code', '');
+                            
                             }
                         }else if(this.readyState == 4 && this.status != 200){
                             //reject
