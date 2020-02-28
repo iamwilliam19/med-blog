@@ -69,7 +69,9 @@
         </div>
         <div class="proName "><?php echo $proName ?></div>
         <div class="proDescription">
-        <?php echo $proBio ?>
+        <?php echo substr($proBio, 0, 100);
+         if(strlen($proBio) > 100) {echo  "...";}
+        ?>
         </div>
         <?php 
             //check if am logged in and an admin
@@ -117,7 +119,7 @@
                 if(($rank == 'admin' || $rank == 'director') && $email == $proEmail):
             ?>
 
-            <a href="post"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <a href="post?id=<?php echo $proId ?>"> <div class="ui button" id="newBut"> New Post  </div></a>
             <?php
                 endif;
             ?>

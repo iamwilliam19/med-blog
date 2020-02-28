@@ -87,8 +87,10 @@
                 //check if am logged in and an admin
                 if($myRank == 'admin' || $myRank == 'director'):
             ?>
-            <a href="post"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <a href="post?id=<?php echo $myId ?>"> <div class="ui button" id="newBut"> New Post  </div></a>
             <?php endif; ?>
+
+            <a href="postEdit?id=<?php echo $post->id ?>"> <div class="ui button" id="newBut"> Edit Post  </div></a>
         
     </div>
 
