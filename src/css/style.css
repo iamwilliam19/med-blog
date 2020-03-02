@@ -328,6 +328,174 @@ footer {
 #boxmeta {
   text-align: center;
 }
+.home_head {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+.homeNav {
+  width: 100%;
+  height: 50px;
+  opacity: 0.9;
+  background-color: #280A66;
+}
+.headShade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+}
+.homeLogo {
+  height: 100%;
+  width: 80%;
+  font-weight: 600;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.3rem;
+  float: left;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.headList {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  z-index: 100000;
+}
+.homeLinks {
+  float: right;
+  width: auto;
+  height: 100%;
+  padding-right: 20px;
+  padding-top: 15px;
+  font-size: 1.5rem;
+}
+.homeLinks i {
+  cursor: pointer;
+  color: #fff;
+  display: block;
+}
+.homeLinks i:hover {
+  color: #280A66;
+}
+.homeLinks nav {
+  display: none;
+}
+.homeLinks nav a {
+  height: 50px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  float: left;
+  padding: 10px;
+  padding-top: 20px;
+}
+.homeLinks nav a:hover {
+  border-bottom: 2px solid #280A66;
+}
+.activeHome {
+  display: block;
+  height: 100%;
+  border-bottom: 2px solid #280A66;
+}
+.secondSection {
+  padding: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  background-image: url('../../images/back1.jpg');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.aboutUs {
+  width: 200px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  position: relative;
+}
+.aboutUs span {
+  font-family: tahoma;
+  font-weight: 600;
+}
+.aboutUs .aboutLine {
+  width: 100%;
+  border: 1px solid #eee;
+  margin-top: 10px;
+}
+.aboutUs .mainAboutLine {
+  width: 50px;
+  top: 30px;
+  left: 50%;
+  margin-left: -25px;
+  position: absolute;
+  z-index: 10000;
+  border-top: 3px solid #280A66;
+}
+.homeAboutText {
+  padding-top: 20px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  line-height: 20px;
+  font-size: 1rem;
+  word-break: none;
+}
+.homeAboutText a {
+  text-decoration: none;
+  color: #f1C40f;
+}
+.homeAboutText a:hover {
+  text-decoration: underline;
+}
+.cardsBox {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cardsBox .article {
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 0px #cccccc;
+  -moz-box-shadow: 0px 0px 15px 0px #cccccc;
+  box-shadow: 0px 0px 15px 0px #cccccc;
+  margin-bottom: 20px;
+}
+.cardsBox .article .artImage {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 150px;
+}
+.cardsBox .article .artImage img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.cardsBox .article .artTitle {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.cardsBox .article .artText {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 20px;
+  padding: 0px 10px 20px 10px;
+  word-break: none;
+  margin-bottom: 20px;
+}
 /*==================Admin design start =======*/
 .adminMain {
   padding-top: 40px ;
@@ -465,6 +633,14 @@ footer {
 /*==================Admin design end =======*/
 /*:::::::::::::tablet::::::::::::::::::::*/
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .cardsBox {
+    width: 75%;
+  }
+  .cardsBox .article {
+    display: inline-block;
+    width: 30%;
+    margin: 0px 2% 0px 0%;
+  }
   .main {
     min-height: 400px;
     margin-bottom: 50px;
@@ -499,6 +675,9 @@ footer {
 /*:::::::::::: tablet ends ::::::::::::::::*/
 /*:::::::::::::desktop::::::::::::::::::::*/
 @media only screen and (min-width: 1024px) {
+  .home_head {
+    height: 80vh;
+  }
   .main {
     min-height: 410px;
     margin-bottom: 50px;
@@ -540,5 +719,30 @@ footer {
     width: 120px;
     height: 120px;
     border-radius: 120px;
+  }
+  .homeLinks {
+    padding-top: 0px;
+    font-size: 1rem;
+  }
+  .homeLinks nav {
+    display: block;
+  }
+  .homeLinks i {
+    display: none;
+  }
+  .homeLogo {
+    width: 20%;
+    text-align: center;
+  }
+  .homeAboutText {
+    width: 70%;
+  }
+  .cardsBox {
+    width: 75%;
+  }
+  .cardsBox .article {
+    display: inline-block;
+    width: 30%;
+    margin: 0px 2% 0px 0%;
   }
 }

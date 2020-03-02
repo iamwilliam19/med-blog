@@ -16,6 +16,9 @@
     $postHandler = new apiProcessor();
     $posterHandler = new posterProcessor();
     
+
+    //get the post details
+    $post = $postHandler->detailFetcher($id);
     
    
     //check if user is online
@@ -74,7 +77,12 @@
                 </ul>
             </div>
 
-            
+            <?php 
+                //check if am logged in and an admin
+                if($myRank == 'admin' || $myRank == 'director'):
+            ?>
+            <a href="post?id=<?php echo $myId ?>"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <?php endif; ?>
 
             
         
@@ -92,7 +100,7 @@
             <div class="field">
                 <label for ="title" ><h3>Title</h3></label>
                 <div class="input">
-                    <input type="text" placeholder=" write a title" id="title"/>
+                    <input type="text" value="<?php echo $post->title ?>" placeholder=" write a title" id="title"/>
                 </div>
             </div>
 
@@ -118,7 +126,8 @@
             </button>
 
             <script>
-$('#summernote').summernote(/*'editor.insertText', 'hello world',*/{
+           
+$('#summernote').summernote('code','<?php echo $post->content ?>',{
         placeholder: 'Write Your Post',
         tabsize: 2,
         height: 300,

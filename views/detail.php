@@ -108,7 +108,10 @@
                 <img src="<?php echo $post->image ?>" alt="<?php echo "Image of ".$post->title ?>" />
             </div>
 
-            <?php echo $post->content ?>
+            <?php
+             $postContent = preg_replace("/<img[^>]+\>/i", "", $post->content,1)  ;
+                 echo $postContent;
+            ?>
             <br />
             <br />
             <i class="ui like icon"></i> 120 

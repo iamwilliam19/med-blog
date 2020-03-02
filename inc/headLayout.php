@@ -2,9 +2,14 @@
   //get page url
     $url = $_SERVER['REQUEST_URI'];
     if($url == '/med-blog/med-blog/index'){
-      $index = "active";
+      $index = 'active';
     }else{
       $index = '';
+    }
+    if($url == '/med-blog/med-blog/blog'){
+      $blog = "active";
+    }else{
+      $blog = '';
     }
      if( $url == '/med-blog/med-blog/aboutus'){
       $aboutus = 'active';
@@ -27,31 +32,33 @@
 <!--header begins-->
 <header>
   <div class="ui padded grid">
-    <div class="four wide center aligned computer only column">
+    <div class="three wide center aligned computer only column">
      <a href="index"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
     </div>
 
-    <div class="four wide center aligned tablet only column">
+    <div class="three wide center aligned tablet only column">
     <a href="index"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
     </div>
 
     <div class="ten wide left aligned mobile only column">
     <a href="index"> <div class="ui large  header " id="logo" >ReachMedica</div></a>
     </div>
-    <div class="seven wide computer only column">
+    <div class="eight wide computer only column">
       <nav class="ui right floated secondary  menu">
-        <a class=" <?php echo $index ?> item" href="index">Blog</a>
+      <a class=" <?php echo $index ?> item" href="./views/index.php">Home</a>
+        <a class=" <?php echo $blog ?> item" href="blog">Blog</a>
         <a class=" <?php echo $aboutus ?> item" href="aboutus">About us</a>
         <a class="<?php echo $contactus ?> item" href="contactus">Contact us</a>
-        <a class="<?php echo $faq ?> item" href="faq">FAQ</a>
+       
       </nav>
     </div>
-    <div class="six wide tablet only column">
+    <div class="eight wide tablet only column">
       <nav class="ui right floated secondary  menu">
-      <a class=" <?php echo $index ?> item" href="index">Blog</a>
+      <a class=" <?php echo $index ?> item" href="index">Home</a>
+      <a class=" <?php echo $blog ?> item" href="blog">Blog</a>
         <a class=" <?php echo $aboutus ?> item" href="aboutus">About us</a>
         <a class="<?php echo $contactus ?> item" href="contactus">Contact us</a>
-        <a class="<?php echo $faq ?> item" href="faq">FAQ</a>
+        
       </nav>
     </div>
     <div class="five wide right aligned computer only column">
@@ -68,7 +75,7 @@
     <?php } ?>
     </div>
 
-    <div class="six wide right aligned tablet only column">
+    <div class="five wide right aligned tablet only column">
     <?php
     
     if(isset($_SESSION['email']) ){
@@ -96,7 +103,7 @@
 
 
 <main class="main">
-  <div class="ui padded container">
+  <div class="ui container">
     <aside class="ui sidebar vertical menu">
       <a class=" <?php echo $index ?> item" href="index">Blog</a>
       <a class=" <?php echo $aboutus ?> item" href="aboutus">About us</a>

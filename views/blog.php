@@ -1,21 +1,101 @@
+<?php
+    require "api/post_api.php";
+    require "api/poster_api.php";
+    //instantiate class
+    $postHandler = new apiProcessor();
+    $myHandler = new posterProcessor();
+    //check set parameters
+    if (!isset($_GET['poster_id']) && !isset($_GET['category'])) {
+        //fetch all posts
+        $posts = $postHandler->postFetcher();
+    }else if(isset($_GET['poster_id'])){
+        //fetch post based on poster
+        $posts = $postHandler->posterPostFetcher($_GET['poster_id']);
+    }else if(isset($_GET['category'])){
+        //fetch post based on category
+        $posts = $postHandler->categoryPostFetcher($_GET['category']);
+    }
+    
+    //check if user is online
+    if(isset($_SESSION['email']) && $_SESSION['email'] != ''){
+        $email = $_SESSION['email'];
+        //get my rank and detail
+        $identity = $myHandler->fetchPoster($email);
+        $rank = $identity->poster_rank;
+        
+        if($rank == 'admin' || $rank == 'director'){
+            //get admin details
+            $proImage = $identity->image;
+            $proName = $identity->fname . ' ' .$identity->lname;
+            $proBio = $identity->bio;
+            $proId = $identity->id;
+            $proEmail = $identity->email;
+        }else if($rank == 'member'){
+            //fetch director details 
+            $dirIdentity = $myHandler->fetchDirector();
+            $proImage = $dirIdentity->image;
+            $proName = $dirIdentity->fname . ' ' .$dirIdentity->lname;
+            $proBio = $dirIdentity->bio;
+            $proId = $dirIdentity->id;
+            $proEmail = $dirIdentity->email;
+        }
+    }else{
+        $email = '';
+        //assign empty sting to rank
+        $rank = '';
+         //fetch director details 
+         $dirIdentity = $myHandler->fetchDirector();
+         $proImage = $dirIdentity->image;
+         $proName = $dirIdentity->fname . ' ' .$dirIdentity->lname;
+         $proBio = $dirIdentity->bio;
+         $proId = $dirIdentity->id;
+         $proEmail = $dirIdentity->email;
+    }
+
+    
+    
+
+
+?>
+
+
+
 <section class="blogBox">
     <div class="blogLeft">
         <div class="blogProImage">
-            <img src="images/sample.jpg" />
+            <img src="<?php if($proImage != ''){ echo $proImage;}else{
+                echo "images/profile/avartar.jpg";
+            } ?>" alt="image of <?php echo $proName ?>" />
         </div>
-        <div class="proName ">Ikeji Chukwunonso</div>
+        <div class="proName "><?php echo $proName ?></div>
         <div class="proDescription">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, voluptate nisi! Ab dolorum con
+        <?php echo substr($proBio, 0, 100);
+         if(strlen($proBio) > 100) {echo  "...";}
+        ?>
         </div>
+        <?php 
+            //check if am logged in and an admin
+            if($rank == 'admin' && $email == $proEmail):
+        ?>
         <div class="proEditLink">
-            <a href="#">Edit Profile</a>
+            <a href="profile_edit?id=<?php echo $proId ?>">Edit Profile</a>
         </div>
+        <?php 
+            endif;
+        ?>
         
             <div class="firstBearer">
                 <ul>
-                    
-                    <a href="#"><li><strong>My Posts</strong></li></a>
-                    <a href="#"><li><strong>Recent Posts</strong></li></a>
+                <?php 
+                
+                    //check if am logged in and an admin
+                    if(($rank == 'admin' || $rank == 'director') && $email == $proEmail):
+                ?>
+                    <a href="index?poster_id=<?php echo $proId ?>"><li><strong>My Posts</strong></li></a>
+                    <?php 
+                        endif;
+                    ?>
+                    <a href="index"><li><strong>Recent Posts</strong></li></a>
                     <li class="except "><strong>Post Fields</strong><i class="ui dropdown icon pushRight"></i></li>
                     
                 </ul>
@@ -26,174 +106,62 @@
 
             <div class="secondBearer">
                 <ul>
-                   <a href="#"> <li><strong>All</strong></li></a>
-                   <a href="#"><li><strong>Anatomy</strong></li></a>
-                   <a href="#"><li><strong>Pharmacology</strong></li></a>
-                   <a href="#"><li><strong>Physiology</strong></li></a>
-                   <a href="#"><li><strong>Medical Biochemistry</strong></li></a>
+                   <a href="index"> <li><strong>All</strong></li></a>
+                   <a href="index?category=anatomy"><li><strong>Anatomy</strong></li></a>
+                   <a href="index?category=pharmacology"><li><strong>Pharmacology</strong></li></a>
+                   <a href="index?category=physiology"><li><strong>Physiology</strong></li></a>
+                   <a href="index?category=mbc"><li><strong>Medical Biochemistry</strong></li></a>
                 </ul>
             </div>
 
-            <a href="#"> <div class="ui button" id="newBut"> New Post  </div></a>
-        
+            <?php 
+                //check if am logged in and an admin
+                if(($rank == 'admin' || $rank == 'director') && $email == $proEmail):
+            ?>
+
+            <a href="post?id=<?php echo $proId ?>"> <div class="ui button" id="newBut"> New Post  </div></a>
+            <?php
+                endif;
+            ?>
     </div>
 
     <!--right blog page -->
 
     <div class="blogRight">
         <div class="ui three doubling stackable  cards">
-            <div class="ui card">
-                <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Pharmacology</div>
-                    <img src="images/sample.jpg" />
-                </div>
-
-                <div class="content">
-                    <div class="header">
-                        What causes cancer that is unknown to man
-                    </div>
-                    <div class="meta">
-                        By Ikeji Chukwunonso | 04 April 2019
-                    </div>
-
-                    <div class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
-                    </div>
-
-                </div>
-
-                <a href="#" >
-                    <div class="readMore">Read More</div>
-                </a>
-
+        <?php 
+            foreach ($posts as $post):
+                //Create a new DOMDocument object.
                 
-            </div>
-
-            <div class="ui card">
-                <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Medical Biochemistry</div>
-                    <img src="images/sample.jpg" />
+                $mainPost = preg_replace("/<img[^>]+>/", "", $post['content']);
+            
+    
+        ?>
+            <a href="detail?id=<?php echo $post['id'] ?>"  class="ui card">
+                <div class="ui image" >
+                    <img src="<?php echo $post['image'] ?>" style="max-width: 100%" />
                 </div>
-
                 <div class="content">
-                    <div class="header">
-                        What causes cancer that is unknown to man
+                    <div class="header" id="boxtitle">
+                       <?php echo $post['title'] ?>
                     </div>
-                    <div class="meta">
-                        By Ikeji Chukwunonso | 04 April 2019
+                    <div class="meta" id="boxmeta">
+                        By <?php echo $post['poster'] ?> | <?php echo $post['day'] .' '. $post['month'] .' '. $post['year']?>
                     </div>
-
                     <div class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
+                        <div class="blogContent">
+                            <?php echo substr(trim($mainPost), 0, 100) ?>
+                        </div>
                     </div>
-
                 </div>
-
-                <a href="#" >
-                    <div class="readMore">Read More</div>
-                </a>
-            </div>
-
-            <div class="ui card">
-                <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Anatomy</div>
-                    <img src="images/sample.jpg" />
-                </div>
-
-                <div class="content">
-                    <div class="header">
-                        What causes cancer that is unknown to man
-                    </div>
-                    <div class="meta">
-                        By Ikeji Chukwunonso | 04 April 2019
-                    </div>
-
-                    <div class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
-                    </div>
-
-                </div>
-
-                <a href="#" >
-                    <div class="readMore">Read More</div>
-                </a>
-            </div>
-
-            <div class="ui card">
-                <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Physiology</div>
-                    <img src="images/sample.jpg" />
-                </div>
-
-                <div class="content">
-                    <div class="header">
-                        What causes cancer that is unknown to man
-                    </div>
-                    <div class="meta">
-                        By Ikeji Chukwunonso | 04 April 2019
-                    </div>
-
-                    <div class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
-                    </div>
-
-                </div>
-
-                <a href="#" >
-                    <div class="readMore">Read More</div>
-                </a>
-            </div>
-
-            <div class="ui card">
-                <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Medical Biochemistry</div>
-                    <img src="images/sample.jpg" />
-                </div>
-
-                <div class="content">
-                    <div class="header">
-                        What causes cancer that is unknown to man
-                    </div>
-                    <div class="meta">
-                        By Ikeji Chukwunonso | 04 April 2019
-                    </div>
-
-                    <div class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
-                    </div>
-
-                </div>
-
-                <a href="#" >
-                    <div class="readMore">Read More</div>
-                </a>
-            </div>
-
-            <div class="ui card">
-                <div class="ui image">
-                    <div class="ui ribbon label" id="ribbon">Anatomy</div>
-                    <img src="images/sample.jpg" />
-                </div>
-
-                <div class="content">
-                    <div class="header">
-                        What causes cancer that is unknown to man
-                    </div>
-                    <div class="meta">
-                        By Ikeji Chukwunonso | 04 April 2019
-                    </div>
-
-                    <div class="description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius consequatur, magni dolore quas in, exercitationem veritatis optio modi veniam 
-                    </div>
-
-                </div>
-
-                <a href="#" >
-                    <div class="readMore">Read More</div>
-                </a>
-            </div>
-
+                
+                    <!--<div class="readMore">Read More</div>-->
+                
+            </a>
+        <?php
+            endforeach;
+        ?>
+            
         </div>
     </div>
 

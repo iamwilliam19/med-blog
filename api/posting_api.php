@@ -41,13 +41,24 @@
         }
 
         public function uploadPost($title,$cat,$post,$image){
-            $this->stmt = $this->connect()->prepare("INSERT INTO posts 
+            $query = $this->connect()->prepare("INSERT INTO posts 
             (title,image, content, category, poster,poster_email,poster_rank,poster_id,day,month,year)
             VALUES
-            ('$title','$image', '$post', '$cat', '$this->name','$this->email','$this->rank','$this->poster_id','$this->day','$this->month','$this->year')
+            (:title,:image, :post, :cat, :name,:email,:rank,:poster_id,:day,:month,:year)
             ");
+              $query->bindParam(":title",$title);
+              $query->bindParam(":image",$image);
+              $query->bindParam(":post",$post);
+              $query->bindParam(":cat",$cat);
+              $query->bindParam(":name",$this->name);
+              $query->bindParam(":email",$this->email);
+              $query->bindParam(":rank",$this->rank);
+              $query->bindParam(":poster_id",$this->poster_id);
+              $query->bindParam(":day",$this->day);
+              $query->bindParam(":month",$this->month);
+              $query->bindParam(":year",$this->year);
             try{
-                $this->stmt->execute();
+                $query->execute();
             }catch(PDOException $e){
                 //return error message
                 return $e->getMessage();
