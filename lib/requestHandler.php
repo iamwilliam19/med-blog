@@ -33,6 +33,7 @@ class RequestHandler
     }else{
         //uri = index page
       $uri = ['index'];
+      
     }
       //print_r($uri);
 
@@ -51,7 +52,8 @@ class RequestHandler
       $file = "controllers/".$uri[0].".php";
 
 
-      //check if file exists
+      if($uri[0] != 'index'){
+        //check if file exists
       if(file_exists($file)){
         //require matched file (controller)
         require $file;
@@ -68,6 +70,10 @@ class RequestHandler
       }else{
         //require error file (controller)
         require "controllers/error.php";
+      }
+      }else{
+        header("location:./views/index.php ");
+        
       }
 
   }

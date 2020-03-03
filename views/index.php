@@ -46,6 +46,15 @@
                 </div>
                 <div style="clear:both"></div>
 </div>
+
+<div class="headSlider">
+  <div class="slideContent">
+    <div class="slideHead">Professionalism</div>
+    <div class=" slideText">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Id quis quasi cumque tempore odio commodi maxime provident officiis adipisci magnam dicta laudantium, ducimus culpa voluptates, quibusdam et assumenda dolorem veniam?
+    </div>
+  </div>
+</div>
         <section class="home_head">
             <div class="headShade">
               
@@ -72,6 +81,9 @@
 
             <div class="cardsBox">
               <div class="article">
+              <div class="artIcon">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+              </div>
                 <div class="artImage">
                   <img src="../images/back1image.jpg" width="100%" height="100%"  />
                 </div>
@@ -96,12 +108,15 @@
                 </div>
               </div>
               <div class="article">
+              <div class="artIcon">
+              <i class="fa fa-eye" aria-hidden="true"></i>
+              </div>
                 <div class="artImage">
                   <img src="../images/mission.jpg" width="100%" height="100%"  />
                 </div>
 
                 <div class="artTitle">
-                  Our Vission
+                  Our Vision
                 </div>
                 <div class="artText">
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit. Minima fuga quis quo? Enim facilis saepe cupiditate voluptas nem
@@ -112,6 +127,103 @@
             </div>
         </section>
 
+
+        <section class="thirdSection">
+        <div class="aboutUs">
+                <div class="mainAboutLine"></div>
+                <span>SERVICES</span>
+                <div class="aboutLine"></div>
+                
+            </div>
+
+            <div class="homeAboutText">
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem expedita illo consequatur in minima sapiente? Necessitatibus, qui eius natus incidunt architecto quam sunt expedita veniam ipsam sapiente itaque possimus molestias.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sunt illum nihil blanditiis consequuntur iure tempora, perferendis non voluptatibus impedit minima obcaecati, itaque culpa quasi autem expedita nisi nobis molestias quas.
+                <a href="../aboutus">read more</a>
+              </p>
+            </div>
+            <div class="cardsBox2">
+                  <div class="article2">
+                    <div class="textLeft">
+                      <i class="ui dashboard icon"></i>
+                    </div>
+                    <div class="textRight">
+                      <div class="textRightTop">
+                        Consultations
+                      </div>
+
+                      <div class="textRightBottom">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sapiente laboriosam, odio delectus accusamus maxime? Culpa enim eum odit reprehenderit 
+                      </div>
+                    </div>
+                    <div style="clear:both"></div>
+                  </div>
+
+                  <div class="article2">
+                  <div class="textLeft">
+                      <i class="ui dashboard icon"></i>
+                    </div>
+                    <div class="textRight">
+                      <div class="textRightTop">
+                        Researchs
+                      </div>
+
+                      <div class="textRightBottom">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sapiente laboriosam, odio delectus accusamus maxime? Culpa enim eum odit reprehenderit 
+                      </div>
+                    </div>
+                    <div style="clear:both"></div>
+                  </div>
+
+                  <div class="article2">
+                  <div class="textLeft">
+                      <i class="ui dashboard icon"></i>
+                    </div>
+                    <div class="textRight">
+                      <div class="textRightTop">
+                        Animal Sales
+                      </div>
+
+                      <div class="textRightBottom">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sapiente laboriosam, odio delectus accusamus maxime? Culpa enim eum odit reprehenderit 
+                      </div>
+                    </div>
+                    <div style="clear:both"></div>
+                  </div>
+
+                  <div class="article2">
+                  <div class="textLeft">
+                      <i class="ui dashboard icon"></i>
+                    </div>
+                    <div class="textRight">
+                      <div class="textRightTop">
+                        Apparatus Sales
+                      </div>
+
+                      <div class="textRightBottom">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Beatae sapiente laboriosam, odio delectus accusamus maxime? Culpa enim eum odit reprehenderit 
+                      </div>
+                    </div>
+                    <div style="clear:both"></div>
+                  </div>
+            </div>
+        </section>
+        
+
+        <section class="fourthSection">
+          <div class="aboutUs">
+                <div class="mainAboutLine"></div>
+                <span>OUR CLIENTS</span>
+                <div class="aboutLine"></div>
+                
+            </div>
+        </section>
+
+
+       
+
+            
 
 
 

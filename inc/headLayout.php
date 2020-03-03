@@ -33,15 +33,15 @@
 <header>
   <div class="ui padded grid">
     <div class="three wide center aligned computer only column">
-     <a href="index"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
+     <a href="index"> <div class="ui medium top  header " id="logo" >DUTCH FARM TECH</div></a>
     </div>
 
-    <div class="three wide center aligned tablet only column">
-    <a href="index"> <div class="ui large top  header " id="logo" >ReachMedica</div></a>
+    <div class="five wide center aligned tablet only column">
+    <a href="index"> <div class="ui medium top  header " id="logo" >DUTCH FARM TECH</div></a>
     </div>
 
     <div class="ten wide left aligned mobile only column">
-    <a href="index"> <div class="ui large  header " id="logo" >ReachMedica</div></a>
+    <a href="index"> <div class="ui large  header " id="logo" >DUTCH FARM TECH</div></a>
     </div>
     <div class="eight wide computer only column">
       <nav class="ui right floated secondary  menu">
@@ -52,7 +52,7 @@
        
       </nav>
     </div>
-    <div class="eight wide tablet only column">
+    <div class="six wide tablet only column">
       <nav class="ui right floated secondary  menu">
       <a class=" <?php echo $index ?> item" href="index">Home</a>
       <a class=" <?php echo $blog ?> item" href="blog">Blog</a>
