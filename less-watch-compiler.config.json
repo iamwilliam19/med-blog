@@ -1,0 +1,12 @@
+{
+    "watchFolder": "src/less",   
+    "outputFolder": "src/css",
+    "mainFile": "style.less",   
+    "sourceMap": false,
+    
+    "allowedExtensions": [".less"],
+    "minified": false,
+    "less-args": "option1=1,option2=2",
+    "runOnce": false,
+    "enableJs": true
+}

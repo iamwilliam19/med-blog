@@ -1,0 +1,872 @@
+* {
+  box-sizing: border-box;
+}
+* input,
+* button {
+  outline: none;
+}
+* a {
+  color: #000;
+}
+body {
+  /*background-color:@background-color;*/
+  margin: 0px;
+  padding: 0px;
+  margin-bottom: -20px;
+}
+#logo {
+  color: #280A66;
+  margin-top: 10px;
+}
+#changeButton {
+  background-color: #280A66;
+  color: white;
+}
+header {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #eee;
+}
+.leftshade {
+  background-color: #fefefe;
+  height: 100%;
+}
+.card {
+  border: none;
+}
+#toppush {
+  padding-top: 40px;
+}
+.righthead {
+  padding-left: 40px;
+}
+label {
+  cursor: pointer;
+}
+.main {
+  min-height: 400px;
+  margin-bottom: 50px;
+}
+footer {
+  width: 100%;
+  height: auto;
+  background-color: #555;
+}
+.footcolor {
+  color: #aaa;
+}
+.horizontalDivider {
+  width: 100%;
+  border: 1px solid #aaa;
+  margin-top: 20px;
+}
+.otherFooter {
+  width: 100%;
+}
+.subinput {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #aaa;
+  margin-top: 10px;
+}
+.subinput input[type=email] {
+  width: 100%;
+  height: 100%;
+  border: none;
+  color: #aaa;
+  background-color: #555;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+.subButton {
+  width: 100%;
+  height: 40px;
+  background-color: #fff;
+  margin-top: 10px;
+  cursor: pointer;
+  border: none;
+}
+.otherFooter {
+  width: 100%;
+  height: auto;
+}
+.otherFootersub {
+  width: 100%;
+  height: 40px;
+  color: #aaa;
+  line-height: 40px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+.otherFootersub:nth-child(1) {
+  font-size: 1rem;
+}
+.otherFootersub:nth-child(1) a {
+  color: #aaa;
+}
+.blogBox {
+  width: 100%;
+  height: auto;
+  padding-top: 30px;
+}
+.blogLeft {
+  display: none;
+  width: 29%;
+  margin-right: 1%;
+}
+.blogRight {
+  width: 100%;
+}
+.blogProImage img {
+  display: block;
+  margin: auto;
+  height: 120px;
+  width: 120px;
+  border-radius: 100px;
+  margin-bottom: 10px;
+}
+.proName {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.proDescription {
+  width: 100%;
+  height: auto;
+  line-height: 20px;
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+}
+.proEditLink {
+  text-align: center;
+  margin-top: 10px;
+}
+.proEditLink a {
+  color: #b93434;
+  text-decoration: underline;
+  font-weight: 600;
+}
+.adjmenu {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.blogBox .firstBearer ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: 20px;
+  width: 100px;
+  margin-left: 25px;
+}
+.blogBox .firstBearer ul a {
+  color: black;
+}
+.blogBox .firstBearer ul a li {
+  padding-top: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.blogBox .firstBearer ul a li:hover {
+  color: #280A66;
+}
+.except {
+  padding-top: 5px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.except:hover {
+  color: #280A66;
+}
+.pushRight {
+  float: right;
+}
+.secondBearer ul {
+  list-style-type: none;
+  margin: 0px;
+  padding: 0px;
+  margin-top: px;
+  width: 150px;
+  margin-left: 25px;
+}
+.secondBearer ul a {
+  color: black;
+}
+.secondBearer ul a li {
+  padding-top: 2px;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+.secondBearer ul a li:hover {
+  color: #280A66;
+}
+#newBut {
+  background-color: #280A66;
+  color: #FFF;
+  width: 90px;
+  padding: 10px;
+  font-size: 0.8rem;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+.readMore {
+  background-color: #280A66;
+  color: #FFF;
+  width: 70px;
+  padding: 8px 0px 10px 0px;
+  text-align: center;
+  font-size: 0.8rem;
+  margin: auto;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+#ribbon {
+  background-color: #280A66;
+  color: #fff;
+  opacity: 0.7;
+}
+#topPad {
+  padding-top: 10px;
+}
+#imageBase {
+  margin-bottom: 20px;
+}
+#padIcon {
+  margin-left: 10px;
+}
+#avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 100px;
+}
+.customMeta {
+  color: #555;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  font-weight: 600;
+}
+.proEditBox {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+#headerColor {
+  color: #280A66;
+}
+#uploaderColor {
+  color: #280A66;
+  cursor: pointer;
+}
+.proImageBox {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+}
+.proImageBox img {
+  width: 100px;
+  height: 100px;
+  border-radius: 100px;
+}
+.form {
+  width: 100%;
+  max-width: 400px;
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+}
+.underLine {
+  width: 20%;
+  margin: auto;
+  border: 1px solid #b93434;
+}
+.formAux {
+  text-align: center;
+}
+.formAux span a {
+  color: #280A66;
+  text-decoration: underline;
+}
+.butCont {
+  width: 120px;
+  height: 25px;
+  margin: auto;
+  text-align: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.butCont button {
+  height: 100%;
+  width: 100%;
+  background-color: #280A66;
+  color: #FFF;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  padding-top: 3px;
+}
+.formMeta {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: -40px;
+}
+.socialBut {
+  width: 250px;
+  margin: auto;
+  text-align: center;
+  margin-top: -15px;
+}
+.blogContent {
+  text-align: center;
+}
+#boxtitle,
+#boxmeta {
+  text-align: center;
+}
+.home_head {
+  width: 100%;
+  height: 50vh;
+  position: relative;
+}
+.homeNav {
+  width: 100%;
+  height: 50px;
+  opacity: 0.9;
+  background-color: #280A66;
+}
+.headShade {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: 0.8;
+}
+.homeLogo {
+  height: 100%;
+  width: 80%;
+  font-weight: 600;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.3rem;
+  float: left;
+  text-align: left;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.headList {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  z-index: 100000;
+}
+.headSlider {
+  width: 100%;
+  height: auto;
+  padding: 0px 10px 0px 10px;
+  color: #fff;
+  position: absolute;
+  z-index: 100000;
+  top: 35%;
+  margin-top: -100px;
+}
+.headSlider .slideContent {
+  width: 70%;
+  margin: auto;
+  border-left: 8px solid #f1C40f;
+  padding: 10px 10px 20px 10px;
+  height: auto;
+}
+.headSlider .slideContent .slideHead {
+  width: 100%;
+  height: auto;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+.headSlider .slideContent .slideText {
+  width: 100%;
+  height: auto;
+  font-size: 0.9rem;
+  text-align: center;
+  word-break: none;
+  padding-top: 20px;
+  line-height: 20px;
+  padding-bottom: 20px;
+}
+.homeLinks {
+  float: right;
+  width: auto;
+  height: 100%;
+  padding-right: 20px;
+  padding-top: 15px;
+  font-size: 1.5rem;
+}
+.homeLinks i {
+  cursor: pointer;
+  color: #fff;
+  display: block;
+}
+.homeLinks i:hover {
+  color: #280A66;
+}
+.homeLinks nav {
+  display: none;
+}
+.homeLinks nav a {
+  height: 50px;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  display: block;
+  float: left;
+  padding: 10px;
+  padding-top: 20px;
+}
+.homeLinks nav a:hover {
+  border-bottom: 2px solid #280A66;
+}
+.activeHome {
+  display: block;
+  height: 100%;
+  border-bottom: 2px solid #280A66;
+}
+.secondSection {
+  padding: 20px;
+  padding-bottom: 20px;
+  height: auto;
+  background-image: url('../../images/back1.jpg');
+  background-repeat: no-repeat;
+  background-position: cover;
+}
+.aboutUs {
+  width: 200px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.5rem;
+  position: relative;
+}
+.aboutUs span {
+  font-family: tahoma;
+  font-weight: 600;
+}
+.aboutUs .aboutLine {
+  width: 100%;
+  border: 1px solid #eee;
+  margin-top: 10px;
+}
+.aboutUs .mainAboutLine {
+  width: 50px;
+  top: 30px;
+  left: 50%;
+  margin-left: -25px;
+  position: absolute;
+  z-index: 10000;
+  border-top: 3px solid #280A66;
+}
+.homeAboutText {
+  padding-top: 20px;
+  width: 100%;
+  margin: auto;
+  text-align: center;
+  line-height: 20px;
+  font-size: 1rem;
+  word-break: none;
+}
+.homeAboutText a {
+  text-decoration: none;
+  color: #f1C40f;
+}
+.homeAboutText a:hover {
+  text-decoration: underline;
+}
+.cardsBox,
+.cardsBox2 {
+  width: 100%;
+  margin: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.cardsBox .article,
+.cardsBox2 .article {
+  background-color: #fff;
+  height: auto;
+  width: 100%;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 0px 15px 0px #cccccc;
+  -moz-box-shadow: 0px 0px 15px 0px #cccccc;
+  box-shadow: 0px 0px 15px 0px #cccccc;
+  margin-bottom: 20px;
+  position: relative;
+}
+.cardsBox .article .artImage,
+.cardsBox2 .article .artImage {
+  width: 100%;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  height: 150px;
+}
+.cardsBox .article .artImage img,
+.cardsBox2 .article .artImage img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+.cardsBox .article .artTitle,
+.cardsBox2 .article .artTitle {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.cardsBox .article .artText,
+.cardsBox2 .article .artText {
+  width: 100%;
+  height: auto;
+  text-align: left;
+  font-size: 0.8rem;
+  line-height: 20px;
+  padding: 0px 10px 20px 10px;
+  word-break: none;
+  margin-bottom: 20px;
+}
+.cardsBox .article .artIcon,
+.cardsBox2 .article .artIcon {
+  position: absolute;
+  top: 130px;
+  width: 40px;
+  left: 50%;
+  margin-left: -20px;
+  background-color: #280A66;
+  color: #fff;
+  text-align: center;
+  border-radius: 50%;
+  height: 40px;
+  line-height: 40px;
+}
+.cardsBox .article2,
+.cardsBox2 .article2 {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.thirdSection {
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  margin-bottom: 50px;
+}
+.textLeft {
+  width: 20%;
+  text-align: center;
+  color: #280A66;
+  float: left;
+  font-size: 20px;
+}
+.textRight {
+  width: 80%;
+  float: left;
+}
+.textRight .textRightTop {
+  width: 100%;
+  height: auto;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.textRight .textRightBottom {
+  width: 100%;
+  height: auto;
+  line-height: 20px;
+  font-size: 0.9rem;
+}
+.fourthSection {
+  width: 100%;
+  height: 100px;
+  background-color: r #fff;
+  margin-bottom: 100px;
+}
+/*==================Admin design start =======*/
+.adminMain {
+  padding-top: 40px ;
+}
+.adminRegBox {
+  width: 100%;
+  max-width: 600px;
+  background-color: #FFFFFF;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px 20px 0px 20px;
+  margin-bottom: 100px;
+}
+.adminPostBox {
+  width: 95%;
+  background-color: #FFFFFF;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px 20px 20px 20px;
+  margin-bottom: 100px;
+}
+.formError {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: red;
+  background-color: pink;
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: none;
+}
+.adminSub {
+  cursor: pointer;
+}
+.loadSign {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: green;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+.adminRegistered {
+  width: 80%;
+  height: auto;
+  text-align: center;
+  color: green;
+  background-color: greenyellow;
+  font-size: 0.8rem;
+  margin: auto;
+  padding: 10px;
+  margin-top: 20px;
+  display: none;
+}
+.messageBody {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 50px;
+}
+.adminProfileBox {
+  background-color: #fff;
+  width: 95%;
+  max-width: 500px;
+  padding: 40px 10px 20px 10px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.adminProfileBox ul {
+  padding: 0px;
+  margin: none;
+  list-style-type: none;
+}
+.adminProfileBox ul li {
+  padding: 5px 10px 0px 10px;
+}
+.adminProfileBox ul li span {
+  font-weight: 600;
+  color: black;
+  float: left;
+  min-width: 100px;
+}
+.adminProfileBox ul li span:nth-child(even) {
+  padding-left: 10px;
+}
+.adminProfileBox .adminProEdit {
+  margin: auto;
+  width: 80px;
+  height: auto;
+  color: #000000;
+  background-color: #ccc;
+  cursor: pointer;
+  padding: 5px 5px 5px 5px;
+  text-align: center;
+}
+.adminProfileBox .adminProEdit:hover {
+  background-color: #eee;
+  color: #000;
+}
+.adminBio {
+  height: 200px;
+  width: 300px;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 10px;
+  line-height: 20px;
+  margin-left: -10px;
+  word-break: none;
+  text-align: left;
+}
+.adminProImage {
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  margin: auto;
+  margin-bottom: 20px;
+}
+.adminProImage img {
+  height: 100%;
+  width: 100%;
+  border-radius: 150px;
+}
+.adminFormLogo {
+  font-size: 2rem;
+}
+/*==================Admin design end =======*/
+/*:::::::::::::tablet::::::::::::::::::::*/
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .cardsBox,
+  .cardsBox2 {
+    width: 75%;
+  }
+  .cardsBox .article,
+  .cardsBox2 .article {
+    display: inline-block;
+    width: 30%;
+    margin: 0px 2% 0px 0%;
+  }
+  .cardsBox .article2,
+  .cardsBox2 .article2 {
+    display: inline-block;
+    width: 49%;
+    height: auto;
+  }
+  .main {
+    min-height: 400px;
+    margin-bottom: 50px;
+  }
+  .otherFootersub {
+    width: 50%;
+    height: 40px;
+    float: right;
+  }
+  .otherFootersub:nth-child(1) {
+    text-align: right;
+    padding-right: 20px;
+  }
+  .otherFootersub:nth-child(2) {
+    text-align: left;
+    padding-left: 20px;
+  }
+  .blogLeft {
+    display: block;
+    width: 29%;
+    margin-right: 1%;
+    float: left;
+  }
+  .blogRight {
+    width: 70%;
+    float: left;
+  }
+  #ribbon {
+    margin-left: 10px;
+  }
+}
+/*:::::::::::: tablet ends ::::::::::::::::*/
+/*:::::::::::::desktop::::::::::::::::::::*/
+@media only screen and (min-width: 1024px) {
+  .home_head {
+    height: 80vh;
+  }
+  .main {
+    min-height: 410px;
+    margin-bottom: 50px;
+  }
+  .otherFootersub {
+    width: 50%;
+    height: 40px;
+    float: right;
+  }
+  .otherFootersub:nth-child(1) {
+    text-align: right;
+    padding-right: 20px;
+  }
+  .otherFootersub:nth-child(2) {
+    text-align: left;
+    padding-left: 20px;
+  }
+  .blogLeft {
+    display: block;
+    width: 20%;
+    margin-right: 5%;
+    float: left;
+  }
+  .blogRight {
+    width: 75%;
+    float: left;
+  }
+  #ribbon {
+    margin-left: 10px;
+  }
+  .adminProfileBox {
+    margin-bottom: 300px;
+  }
+  .proImageBox {
+    width: 100%;
+    height: 120px;
+  }
+  .proImageBox img {
+    width: 120px;
+    height: 120px;
+    border-radius: 120px;
+  }
+  .homeLinks {
+    padding-top: 0px;
+    font-size: 1rem;
+  }
+  .homeLinks nav {
+    display: block;
+  }
+  .homeLinks i {
+    display: none;
+  }
+  .homeLogo {
+    width: 20%;
+    text-align: center;
+  }
+  .homeAboutText {
+    width: 70%;
+  }
+  .cardsBox,
+  .cardsBox2 {
+    width: 75%;
+  }
+  .cardsBox .article,
+  .cardsBox2 .article {
+    display: inline-block;
+    width: 30%;
+    margin: 0px 2% 0px 0%;
+  }
+  .cardsBox .article2,
+  .cardsBox2 .article2 {
+    display: inline-block;
+    width: 49%;
+    height: auto;
+  }
+  .cardsBox .article2::nth-child(1),
+  .cardsBox2 .article2::nth-child(1) {
+    margin-right: 1%;
+  }
+  .cardsBox .article2::nth-child(2),
+  .cardsBox2 .article2::nth-child(2) {
+    margin-left: 1%;
+  }
+  .headSlider {
+    top: 50%;
+  }
+}
